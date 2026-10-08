@@ -1,113 +1,120 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
-  <head>
-   <meta charset="utf-8"/>
-   <meta content="width=device-width,initial-scale=1" name="viewport"/>
-   <meta content="Recrutei na Prática — guia do gestor GEX para conduzir processos seletivos com clareza, responsabilidade e evidências." name="description"/>
-   <title>
-    Recrutei na Prática | Guia do Gestor GEX
-   </title>
-   <style>
-    :root {
-   --navy:#051629;
-   --navy2:#0a2038;
-   --blue:#19a9f2;
-   --blue2:#246edb;
-   --cyan:#55d7ff;
-   --white:#fff;
-   --ink:#0d1b2a;
-   --muted:#667789;
-   --line:#dce6ef;
-   --bg:#f4f8fb;
-   --soft:#eaf6fd;
-   --soft2:#edf2ff;
-   --warn:#fff7df;
-   --ok:#e9fbf3;
-   --danger:#fff0f0;
-   --shadow:0 18px 48px rgba(5,22,41,.10);
-   --radius:22px;
-   --radius-sm:14px
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Recrutei na Prática — guia do gestor GEX para conduzir processos seletivos com clareza, responsabilidade e evidências." name="description"/>
+<title>Recrutei na Prática | Guia do Gestor GEX</title>
+
+<style>
+:root{
+  --navy:#051629;
+  --navy2:#0a2038;
+  --blue:#19a9f2;
+  --blue2:#246edb;
+  --cyan:#55d7ff;
+  --white:#fff;
+  --ink:#0d1b2a;
+  --muted:#667789;
+  --line:#dce6ef;
+  --bg:#f4f8fb;
+  --soft:#eaf6fd;
+  --soft2:#edf2ff;
+  --warn:#fff7df;
+  --ok:#e9fbf3;
+  --danger:#fff0f0;
+  --shadow:0 18px 48px rgba(5,22,41,.10);
+  --radius:22px;
+  --radius-sm:14px
 }
-* {
-   box-sizing:border-box
+
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.58
 }
-html {
-   scroll-behavior:smooth
+
+a{color:inherit}
+
+button,input{font:inherit}
+
+.progress-top{
+  position:fixed;
+  left:0;
+  top:0;
+  height:3px;
+  background:linear-gradient(90deg,var(--cyan),var(--blue2));
+  width:0;
+  z-index:1000
 }
-body {
-   margin:0;
-   font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;
-   color:var(--ink);
-   background:var(--bg);
-   line-height:1.58
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:900;
+  background:rgba(5,22,41,.94);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.08)
 }
-a {
-   color:inherit
+
+.header-inner{
+  max-width:1440px;
+  margin:auto;
+  height:76px;
+  display:flex;
+  align-items:center;
+  gap:20px;
+  padding:0 28px
 }
-button,input {
-   font:inherit
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  min-width:max-content
 }
-.progress-top {
-   position:fixed;
-   left:0;
-   top:0;
-   height:3px;
-   background:linear-gradient(90deg,var(--cyan),var(--blue2));
-   width:0;
-   z-index:1000
+
+.brand img{
+  height:44px;
+  width:auto;
+  border-radius:8px
 }
-.site-header {
-   position:sticky;
-   top:0;
-   z-index:900;
-   background:rgba(5,22,41,.94);
-   backdrop-filter:blur(16px);
-   border-bottom:1px solid rgba(255,255,255,.08)
-}
-.header-inner {
-   max-width:1440px;
-   margin:auto;
-   height:76px;
-   display:flex;
-   align-items:center;
-   gap:20px;
-   padding:0 28px
-}
-.brand {
-   display:flex;
-   align-items:center;
-   gap:12px;
-   text-decoration:none;
-   min-width:max-content
-}
-.brand img {
-   height:44px;
-   width:auto;
-   border-radius:8px
-}
-.brand-label {
+
+.brand-label{
   font-weight:800;
   color:#fff;
   font-size:14px;
   line-height:1.2
 }
-.brand-label span {
+
+.brand-label span{
   display:block;
   color:#6fd8ff;
   font-size:11px;
   text-transform:uppercase;
   letter-spacing:.12em
 }
-.search-wrap {
+
+.search-wrap{
   flex:1;
   display:flex;
   justify-content:center
 }
-.search {
+
+.search{
   width:min(520px,100%);
   position:relative
 }
-.search input {
+
+.search input{
   width:100%;
   border:1px solid rgba(255,255,255,.16);
   background:rgba(255,255,255,.08);
@@ -116,20 +123,24 @@ button,input {
   padding:12px 44px 12px 17px;
   outline:none
 }
-.search input::placeholder {
+
+.search input::placeholder{
   color:#a8b9c8
 }
-.search .sicon {
+
+.search .sicon{
   position:absolute;
   right:16px;
   top:10px;
   color:#87a5ba
 }
-.top-actions {
+
+.top-actions{
   display:flex;
   gap:10px
 }
-.btn {
+
+.btn{
   border:0;
   border-radius:999px;
   padding:11px 16px;
@@ -141,19 +152,23 @@ button,input {
   gap:8px;
   transition:.2s
 }
-.btn:hover {
+
+.btn:hover{
   transform:translateY(-1px)
 }
-.btn.primary {
+
+.btn.primary{
   background:linear-gradient(135deg,var(--cyan),var(--blue2));
   color:#03213a
 }
-.btn.ghost {
+
+.btn.ghost{
   color:#fff;
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.12)
 }
-.layout {
+
+.layout{
   max-width:1440px;
   margin:auto;
   display:grid;
@@ -161,7 +176,8 @@ button,input {
   gap:34px;
   padding:30px 28px 80px
 }
-.sidebar {
+
+.sidebar{
   position:sticky;
   top:104px;
   align-self:start;
@@ -169,19 +185,22 @@ button,input {
   overflow:auto;
   padding-right:6px
 }
-.side-kicker {
- font-size:11px;
- font-weight:900;
- letter-spacing:.13em;
- color:var(--blue2);
- text-transform:uppercase;
- margin:3px 0 10px
+
+.side-kicker{
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:.13em;
+  color:var(--blue2);
+  text-transform:uppercase;
+  margin:3px 0 10px
 }
-.side-nav {
+
+.side-nav{
   display:grid;
   gap:6px
 }
-.side-nav a {
+
+.side-nav a{
   text-decoration:none;
   color:#56697a;
   padding:10px 12px;
@@ -190,13 +209,16 @@ button,input {
   font-size:14px;
   border-left:3px solid transparent
 }
-.side-nav a:hover,.side-nav a.active {
+
+.side-nav a:hover,
+.side-nav a.active{
   background:#fff;
   color:var(--ink);
   border-left-color:var(--blue);
   box-shadow:0 5px 16px rgba(5,22,41,.06)
 }
-.sidebar-note {
+
+.sidebar-note{
   margin-top:20px;
   padding:15px;
   border-radius:14px;
@@ -204,25 +226,31 @@ button,input {
   color:#dceaf4;
   font-size:12px
 }
-.sidebar-note strong {
+
+.sidebar-note strong{
   color:#fff;
   display:block;
   margin-bottom:5px
 }
-.main {
+
+.main{
   min-width:0
 }
-.hero {
+
+.hero{
   min-height:560px;
   border-radius:32px;
-  background:radial-gradient(circle at 78% 14%,rgba(43,170,255,.34),transparent 30%),linear-gradient(145deg,#031223 0%,#071c33 56%,#0a3155 100%);
+  background:
+    radial-gradient(circle at 78% 14%,rgba(43,170,255,.34),transparent 30%),
+    linear-gradient(145deg,#031223 0%,#071c33 56%,#0a3155 100%);
   color:#fff;
   padding:56px;
   position:relative;
   overflow:hidden;
   box-shadow:var(--shadow)
 }
-.hero:before {
+
+.hero:before{
   content:"";
   position:absolute;
   width:380px;
@@ -231,40 +259,48 @@ button,input {
   border-radius:50%;
   right:-90px;
   bottom:-150px;
-  box-shadow:0 0 0 50px rgba(95,211,255,.04),0 0 0 100px rgba(95,211,255,.025)
+  box-shadow:
+    0 0 0 50px rgba(95,211,255,.04),
+    0 0 0 100px rgba(95,211,255,.025)
 }
-.hero-kicker {
+
+.hero-kicker{
   font-size:12px;
   font-weight:900;
   letter-spacing:.16em;
   text-transform:uppercase;
   color:#70ddff
 }
-.hero h1 {
+
+.hero h1{
   font-size:clamp(44px,7vw,78px);
   line-height:.98;
   letter-spacing:-.055em;
   margin:22px 0 22px;
   max-width:780px
 }
-.hero p {
+
+.hero p{
   font-size:20px;
   color:#bed2e1;
   max-width:720px;
   margin:0 0 28px
 }
-.hero .tagline {
+
+.hero .tagline{
   font-weight:900;
   color:#fff;
   margin:28px 0 0
 }
-.hero-actions {
+
+.hero-actions{
   display:flex;
   gap:12px;
   flex-wrap:wrap;
   margin-top:32px
 }
-.hero-mini {
+
+.hero-mini{
   position:absolute;
   right:48px;
   bottom:42px;
@@ -275,7 +311,8 @@ button,input {
   padding:18px;
   backdrop-filter:blur(10px)
 }
-.hero-mini span {
+
+.hero-mini span{
   display:block;
   color:#6fd8ff;
   font-weight:900;
@@ -283,47 +320,55 @@ button,input {
   text-transform:uppercase;
   letter-spacing:.12em
 }
-.hero-mini strong {
+
+.hero-mini strong{
   display:block;
   font-size:22px;
   margin:6px 0 4px
 }
-.hero-mini p {
+
+.hero-mini p{
   font-size:13px;
   margin:0;
   color:#a9c0d1
 }
-.section {
+
+.section{
   padding:82px 0 0;
   scroll-margin-top:88px
 }
-.section-head {
+
+.section-head{
   display:flex;
   align-items:flex-end;
   justify-content:space-between;
   gap:20px;
   margin-bottom:26px
 }
-.eyebrow {
+
+.eyebrow{
   font-size:12px;
   text-transform:uppercase;
   letter-spacing:.13em;
   font-weight:900;
   color:var(--blue2)
 }
-.section h2 {
+
+.section h2{
   font-size:clamp(31px,4vw,48px);
   line-height:1.04;
   letter-spacing:-.04em;
   margin:7px 0 8px
 }
-.section-lead {
+
+.section-lead{
   font-size:17px;
   color:var(--muted);
   max-width:800px;
   margin:0
 }
-.pill {
+
+.pill{
   font-size:12px;
   font-weight:900;
   padding:8px 11px;
@@ -332,21 +377,25 @@ button,input {
   color:#0674b1;
   white-space:nowrap
 }
-.pill.advanced {
+
+.pill.advanced{
   background:#eef0f5;
   color:#596572
 }
-.pill.essential {
+
+.pill.essential{
   background:#ddf6ff;
   color:#046b9f
 }
-.quick-grid {
+
+.quick-grid{
   display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:15px;
- margin:24px 0
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+  margin:24px 0
 }
-.quick-card {
+
+.quick-card{
   background:#fff;
   border:1px solid var(--line);
   border-radius:18px;
@@ -355,12 +404,14 @@ button,input {
   transition:.2s;
   box-shadow:0 6px 18px rgba(5,22,41,.04)
 }
-.quick-card:hover {
+
+.quick-card:hover{
   transform:translateY(-3px);
   box-shadow:var(--shadow);
   border-color:#9fdcff
 }
-.qnum {
+
+.qnum{
   display:flex;
   width:38px;
   height:38px;
@@ -372,45 +423,54 @@ button,input {
   font-weight:900;
   margin-bottom:14px
 }
-.quick-card strong {
+
+.quick-card strong{
   font-size:17px;
   display:block
 }
-.quick-card p {
+
+.quick-card p{
   font-size:13px;
   color:var(--muted);
   margin:6px 0 0
 }
-.grid-2 {
+
+.grid-2{
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:16px
 }
-.grid-3 {
+
+.grid-3{
   display:grid;
   grid-template-columns:repeat(3,minmax(0,1fr));
   gap:16px
 }
-.card {
+
+.card{
   background:#fff;
   border:1px solid var(--line);
   border-radius:var(--radius);
   padding:25px;
   box-shadow:0 5px 20px rgba(5,22,41,.04)
 }
-.card h3 {
+
+.card h3{
   font-size:20px;
   margin:0 0 10px
 }
-.card p {
+
+.card p{
   color:var(--muted);
   margin:0
 }
-.culture-card {
+
+.culture-card{
   position:relative;
   overflow:hidden
 }
-.culture-card:after {
+
+.culture-card:after{
   content:"";
   position:absolute;
   width:80px;
@@ -420,17 +480,20 @@ button,input {
   right:-25px;
   top:-25px
 }
-.culture-word {
+
+.culture-word{
   font-size:26px;
   font-weight:950;
   letter-spacing:-.035em;
   margin-bottom:6px
 }
-.culture-action {
+
+.culture-action{
   font-size:14px;
   color:var(--muted)
 }
-.role-table {
+
+.role-table{
   width:100%;
   border-collapse:collapse;
   background:#fff;
@@ -438,25 +501,31 @@ button,input {
   overflow:hidden;
   border:1px solid var(--line)
 }
-.role-table th,.role-table td {
+
+.role-table th,
+.role-table td{
   padding:14px 15px;
   text-align:left;
   border-bottom:1px solid var(--line);
   vertical-align:top
 }
-.role-table th {
+
+.role-table th{
   background:var(--navy);
   color:#fff;
   font-size:13px
 }
-.role-table td:first-child {
+
+.role-table td:first-child{
   font-weight:800;
   width:22%
 }
-.role-table tr:last-child td {
+
+.role-table tr:last-child td{
   border-bottom:0
 }
-.path {
+
+.path{
   display:flex;
   align-items:center;
   gap:7px;
@@ -469,40 +538,49 @@ button,input {
   font-size:13px;
   margin:14px 0
 }
-.path span {
+
+.path span{
   color:#9badbc
 }
-.callout {
+
+.callout{
   border-radius:16px;
   padding:17px 18px;
   margin:16px 0;
   border-left:4px solid var(--blue)
 }
-.callout strong {
+
+.callout strong{
   display:block;
   margin-bottom:4px
 }
-.callout.info {
+
+.callout.info{
   background:var(--soft)
 }
-.callout.warn {
+
+.callout.warn{
   background:var(--warn);
   border-left-color:#e8a11f
 }
-.callout.ok {
+
+.callout.ok{
   background:var(--ok);
   border-left-color:#20a46a
 }
-.callout.danger {
+
+.callout.danger{
   background:var(--danger);
   border-left-color:#d95b5b
 }
-.steps {
+
+.steps{
   display:grid;
   gap:12px;
   margin:16px 0
 }
-.step {
+
+.step{
   display:grid;
   grid-template-columns:44px 1fr;
   gap:14px;
@@ -512,37 +590,43 @@ button,input {
   border-radius:15px;
   padding:15px
 }
-.step-num {
+
+.step-num{
   width:42px;
- height:42px;
- border-radius:12px;
- background:linear-gradient(145deg,var(--navy),#163a5d);
- color:#70dcff;
- display:flex;
- align-items:center;
- justify-content:center;
- font-weight:950
+  height:42px;
+  border-radius:12px;
+  background:linear-gradient(145deg,var(--navy),#163a5d);
+  color:#70dcff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:950
 }
-.step strong {
+
+.step strong{
   display:block;
   margin-bottom:2px
 }
-.step p {
+
+.step p{
   margin:0;
   color:var(--muted);
   font-size:14px
 }
-.accordion {
+
+.accordion{
   display:grid;
   gap:10px
 }
-details {
+
+details{
   background:#fff;
   border:1px solid var(--line);
   border-radius:17px;
   overflow:hidden
 }
-summary {
+
+summary{
   list-style:none;
   cursor:pointer;
   padding:18px 20px;
@@ -552,39 +636,49 @@ summary {
   justify-content:space-between;
   gap:16px
 }
-summary::-webkit-details-marker {
+
+summary::-webkit-details-marker{
   display:none
 }
-summary:after {
+
+summary:after{
   content:"+";
   font-size:22px;
   color:var(--blue2);
   font-weight:500
 }
-details[open] summary:after {
+
+details[open] summary:after{
   content:"–"
 }
-details[open] summary {
+
+details[open] summary{
   background:#f8fbfd;
   border-bottom:1px solid var(--line)
 }
-.detail-body {
+
+.detail-body{
   padding:20px
 }
-.detail-body h4 {
+
+.detail-body h4{
   margin:20px 0 8px
 }
-.detail-body h4:first-child {
+
+.detail-body h4:first-child{
   margin-top:0
 }
-.detail-body p {
+
+.detail-body p{
   color:#556879
 }
-.detail-body ul {
+
+.detail-body ul{
   padding-left:20px;
   color:#556879
 }
-.template {
+
+.template{
   position:relative;
   background:#07192b;
   color:#dceaf4;
@@ -594,55 +688,65 @@ details[open] summary {
   font-size:14px;
   overflow:hidden
 }
-.template strong {
+
+.template strong{
   color:#fff
 }
-.copy-btn {
+
+.copy-btn{
   position:absolute;
   right:12px;
- top:12px;
- background:rgba(255,255,255,.1);
- border:1px solid rgba(255,255,255,.14);
- color:#fff;
- border-radius:9px;
- padding:7px 10px;
- cursor:pointer;
- font-size:12px;
- font-weight:800
+  top:12px;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.14);
+  color:#fff;
+  border-radius:9px;
+  padding:7px 10px;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:800
 }
-.decision-flow {
+
+.decision-flow{
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:9px;
   margin:16px 0
 }
-.flow-item {
+
+.flow-item{
   padding:17px;
   background:#fff;
   border-radius:14px;
   border:1px solid var(--line)
 }
-.flow-item strong {
+
+.flow-item strong{
   display:block
 }
-.flow-item small {
+
+.flow-item small{
   color:var(--muted)
 }
-.checklist {
+
+.checklist{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:15px
 }
-.check-group {
+
+.check-group{
   background:#fff;
   border:1px solid var(--line);
   border-radius:18px;
   padding:20px
 }
-.check-group h3 {
+
+.check-group h3{
   margin-top:0
 }
-.check-item {
+
+.check-item{
   display:flex;
   gap:11px;
   padding:10px 0;
@@ -650,48 +754,57 @@ details[open] summary {
   font-size:14px;
   align-items:flex-start
 }
-.check-item:first-of-type {
+
+.check-item:first-of-type{
   border-top:0
 }
-.check-item input {
+
+.check-item input{
   width:18px;
   height:18px;
   accent-color:var(--blue2);
   margin-top:2px
 }
-.support-grid {
+
+.support-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:14px
 }
-.support-card {
+
+.support-card{
   border-radius:16px;
   padding:20px;
   background:#fff;
   border:1px solid var(--line)
 }
-.support-card span {
+
+.support-card span{
   font-size:11px;
   text-transform:uppercase;
   letter-spacing:.11em;
   color:var(--blue2);
   font-weight:900
 }
-.support-card strong {
+
+.support-card strong{
   display:block;
   margin:7px 0 4px
 }
-.support-card p {
+
+.support-card p{
   font-size:13px;
   color:var(--muted);
   margin:0
 }
-.ref-grid {
+
+.ref-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
   gap:9px
 }
-.ref-card {
+
+.ref-card{
   position:relative;
   display:flex;
   gap:12px;
@@ -702,52 +815,63 @@ details[open] summary {
   padding:14px 38px 14px 14px;
   transition:.2s
 }
-.ref-card:hover {
+
+.ref-card:hover{
   border-color:#8bdcff;
   transform:translateY(-1px)
 }
-.ref-num {
+
+.ref-num{
   font-size:11px;
   color:var(--blue2);
   font-weight:900;
   padding-top:2px
 }
-.ref-card strong {
+
+.ref-card strong{
   font-size:14px
 }
-.ref-card p {
+
+.ref-card p{
   margin:3px 0 0;
   color:var(--muted);
   font-size:12px
 }
-.external {
+
+.external{
   position:absolute;
   right:13px;
   top:12px;
   color:#7f94a4
 }
-.footer {
+
+.footer{
   margin-top:80px;
   border-radius:28px;
   background:var(--navy);
   color:#d1e0ea;
   padding:36px
 }
-.footer strong {
+
+.footer strong{
   color:#fff
 }
-.footer-grid {
+
+.footer-grid{
   display:grid;
   grid-template-columns:1.3fr 1fr;
   gap:30px
 }
-.footer small {
+
+.footer small{
   color:#8ca3b4
 }
-.hidden-search {
+
+.hidden-search{
   display:none!important
 }
-.search-empty {
+
+.search-empty{
   display:none;
   background:#fff4e5;
   border:1px solid #f2d49c;
@@ -755,110 +879,66 @@ details[open] summary {
   padding:18px;
   margin-top:18px
 }
-.mobile-menu {
+
+.mobile-menu{
   display:none
 }
-@media(max-width:1080px) {
-  .layout {
-    grid-template-columns:1fr
-  }
-  .sidebar {
-    display:none
-  }
-  .hero-mini {
-    display:none
-  }
-  .quick-grid {
-    grid-template-columns:repeat(2,1fr)
-  }
-  .checklist,.support-grid {
-   grid-template-columns:1fr 1fr
- }
- .mobile-menu {
-   display:inline-flex
- }
+
+@media(max-width:1080px){
+  .layout{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .hero-mini{display:none}
+  .quick-grid{grid-template-columns:repeat(2,1fr)}
+  .checklist,.support-grid{grid-template-columns:1fr 1fr}
+  .mobile-menu{display:inline-flex}
 }
-@media(max-width:760px) {
-  .header-inner {
-    padding:0 14px;
-    height:68px
-  }
-  .brand-label {
-    display:none
-  }
-  .brand img {
-    height:36px
-  }
-  .search-wrap {
-    display:none
-  }
-  .top-actions .ghost {
-    display:none
-  }
-  .layout {
-    padding:18px 14px 60px
-  }
-  .hero {
-    padding:34px 24px;
-    min-height:510px;
-    border-radius:24px
-  }
-  .hero h1 {
-    font-size:48px
-  }
-  .hero p {
-    font-size:17px
-  }
-  .quick-grid,.grid-2,.grid-3,.checklist,.support-grid,.ref-grid,.decision-flow {
+
+@media(max-width:760px){
+  .header-inner{padding:0 14px;height:68px}
+  .brand-label{display:none}
+  .brand img{height:36px}
+  .search-wrap{display:none}
+  .top-actions .ghost{display:none}
+  .layout{padding:18px 14px 60px}
+  .hero{padding:34px 24px;min-height:510px;border-radius:24px}
+  .hero h1{font-size:48px}
+  .hero p{font-size:17px}
+  .quick-grid,.grid-2,.grid-3,.checklist,.support-grid,.ref-grid,.decision-flow{
     grid-template-columns:1fr
   }
-  .section {
-    padding-top:62px
-  }
-  .section-head {
-    align-items:flex-start;
-    flex-direction:column
-  }
-  .footer-grid {
-    grid-template-columns:1fr
-  }
-  .role-table {
-    font-size:13px
-  }
-  .role-table th,.role-table td {
-    padding:11px 8px
-  }
+  .section{padding-top:62px}
+  .section-head{align-items:flex-start;flex-direction:column}
+  .footer-grid{grid-template-columns:1fr}
+  .role-table{font-size:13px}
+  .role-table th,.role-table td{padding:11px 8px}
 }
-@media print {
-  .site-header,.sidebar,.hero-actions,.progress-top,.copy-btn,.quiz button {
+
+@media print{
+  .site-header,.sidebar,.hero-actions,.progress-top,.copy-btn{
     display:none!important
   }
-  .layout {
+  .layout{
     display:block;
     max-width:none;
     padding:0
   }
-  .hero {
+  .hero{
     box-shadow:none;
     min-height:auto;
     border-radius:0
   }
-  .section {
+  .section{
     break-inside:avoid;
     padding-top:28px
   }
-  body {
-    background:#fff
-  }
-  details {
-    break-inside:avoid
-  }
-  details > * {
-    display:block!important
-  }
+  body{background:#fff}
+  details{break-inside:avoid}
+  details > *{display:block!important}
 }
+
 /* V3 — refinamento visual do Guia do Gestor */
-:root {
+
+:root{
   --navy:#041526;
   --navy-deep:#03111f;
   --navy-card:#071d33;
@@ -871,21 +951,26 @@ details[open] summary {
   --line:#d9e5ee;
   --shadow:0 20px 56px rgba(4,21,38,.11)
 }
-body {
+
+body{
   background:linear-gradient(180deg,#f6f9fb 0,#f3f7fa 520px,#f3f7fa 100%)
 }
-.site-header {
+
+.site-header{
   background:rgba(4,21,38,.96);
   box-shadow:0 8px 28px rgba(2,14,26,.12)
 }
-.header-inner {
+
+.header-inner{
   height:82px;
   gap:22px
 }
-.brand {
+
+.brand{
   gap:14px
 }
-.brand-logo {
+
+.brand-logo{
   display:block;
   height:42px!important;
   width:auto!important;
@@ -894,16 +979,19 @@ body {
   border-radius:0!important;
   filter:drop-shadow(0 5px 14px rgba(0,0,0,.18))
 }
-.brand-label {
+
+.brand-label{
   border-left:1px solid rgba(255,255,255,.14);
   padding-left:14px;
   font-size:14px
 }
-.brand-label span {
+
+.brand-label span{
   color:#65d5ff;
   margin-bottom:2px
 }
-.manager-badge {
+
+.manager-badge{
   display:inline-flex;
   align-items:center;
   gap:7px;
@@ -916,7 +1004,8 @@ body {
   font-weight:850;
   white-space:nowrap
 }
-.manager-badge:before {
+
+.manager-badge:before{
   content:"";
   width:7px;
   height:7px;
@@ -924,34 +1013,45 @@ body {
   background:#58d8ff;
   box-shadow:0 0 0 4px rgba(88,216,255,.09)
 }
-.layout {
+
+.layout{
   padding-top:34px
 }
-.sidebar {
+
+.sidebar{
   top:116px
 }
-.side-kicker {
+
+.side-kicker{
   color:#167cc1
 }
-.side-nav a {
+
+.side-nav a{
   transition:.18s
 }
-.side-nav a.active {
+
+.side-nav a.active{
   background:linear-gradient(90deg,#fff,#f7fbfe);
   border-left-color:#1aa9f4
 }
-.sidebar-note {
+
+.sidebar-note{
   background:linear-gradient(145deg,#041526,#0a2948);
   border:1px solid rgba(88,216,255,.10);
   box-shadow:0 12px 32px rgba(4,21,38,.10)
 }
-.hero {
+
+.hero{
   min-height:550px;
-  background:radial-gradient(circle at 79% 16%,rgba(32,161,245,.29),transparent 31%),radial-gradient(circle at 15% 90%,rgba(38,120,229,.12),transparent 35%),linear-gradient(145deg,#03111f 0%,#061b31 58%,#0a3155 100%);
+  background:
+    radial-gradient(circle at 79% 16%,rgba(32,161,245,.29),transparent 31%),
+    radial-gradient(circle at 15% 90%,rgba(38,120,229,.12),transparent 35%),
+    linear-gradient(145deg,#03111f 0%,#061b31 58%,#0a3155 100%);
   border:1px solid rgba(88,216,255,.09);
   box-shadow:0 28px 70px rgba(4,21,38,.16)
 }
-.hero-kicker {
+
+.hero-kicker{
   display:inline-flex;
   align-items:center;
   background:rgba(88,216,255,.07);
@@ -960,38 +1060,48 @@ body {
   border-radius:999px;
   color:#7be0ff
 }
-.hero h1 {
+
+.hero h1{
   max-width:700px
 }
-.hero p {
+
+.hero p{
   max-width:760px
 }
-.hero-mini {
+
+.hero-mini{
   background:rgba(3,17,31,.46);
   border-color:rgba(119,224,255,.15)
 }
-.section {
+
+.section{
   padding-top:76px
 }
-.section-head {
+
+.section-head{
   padding-bottom:2px
 }
-.section h2 {
+
+.section h2{
   color:#091a2a
 }
-.pill.essential {
+
+.pill.essential{
   background:#e2f6ff;
   color:#086c9f;
   border:1px solid #c6ecfc
 }
-.quick-card,.card,.step,details,.check-group,.support-card,.ref-card,.flow-item {
+
+.quick-card,.card,.step,details,.check-group,.support-card,.ref-card,.flow-item{
   box-shadow:0 7px 22px rgba(4,21,38,.035)
 }
-.quick-card {
+
+.quick-card{
   position:relative;
   overflow:hidden
 }
-.quick-card:after {
+
+.quick-card:after{
   content:"→";
   position:absolute;
   right:18px;
@@ -999,51 +1109,66 @@ body {
   color:#a7b7c4;
   font-size:18px
 }
-.quick-card:hover:after {
+
+.quick-card:hover:after{
   color:#1aa9f4
 }
-.qnum {
+
+.qnum{
   background:linear-gradient(145deg,#041526,#103b62)
 }
-.card {
+
+.card{
   transition:.18s
 }
-.card:hover {
+
+.card:hover{
   border-color:#c7dce9
 }
-.culture-card {
+
+.culture-card{
   min-height:150px
 }
-.culture-card:after {
+
+.culture-card:after{
   background:linear-gradient(145deg,#e7f8ff,#eef5ff)
 }
-.role-table {
+
+.role-table{
   box-shadow:0 7px 22px rgba(4,21,38,.035)
 }
-.role-table th {
+
+.role-table th{
   background:linear-gradient(90deg,#041526,#09223c)
 }
-.path {
+
+.path{
   background:#f8fbfd
 }
-.callout {
+
+.callout{
   box-shadow:inset 0 0 0 1px rgba(4,21,38,.02)
 }
-summary {
+
+summary{
   transition:.18s
 }
-summary:hover {
+
+summary:hover{
   background:#f8fbfd
 }
-.template {
+
+.template{
   background:linear-gradient(145deg,#06182a,#092540)
 }
-.footer {
+
+.footer{
   background:linear-gradient(145deg,#03111f,#071f38);
   border:1px solid rgba(88,216,255,.10);
   padding:40px
 }
-.footer-logo {
+
+.footer-logo{
   display:block;
   width:148px;
   height:auto;
@@ -1052,13 +1177,15 @@ summary:hover {
   margin-bottom:18px;
   filter:drop-shadow(0 6px 16px rgba(0,0,0,.18))
 }
-.mobile-nav-wrap {
+
+.mobile-nav-wrap{
   display:none;
   background:#06192c;
   border-top:1px solid rgba(255,255,255,.06);
   border-bottom:1px solid rgba(255,255,255,.06)
 }
-.mobile-nav-inner {
+
+.mobile-nav-inner{
   max-width:1440px;
   margin:auto;
   padding:10px 18px;
@@ -1066,14 +1193,16 @@ summary:hover {
   align-items:center;
   gap:10px
 }
-.mobile-nav-inner label {
+
+.mobile-nav-inner label{
   font-size:11px;
   font-weight:900;
   letter-spacing:.08em;
   text-transform:uppercase;
   color:#75d9ff
 }
-.mobile-nav-inner select {
+
+.mobile-nav-inner select{
   flex:1;
   min-width:0;
   color:#fff;
@@ -1083,7 +1212,8 @@ summary:hover {
   padding:9px 11px;
   outline:none
 }
-.back-top {
+
+.back-top{
   position:fixed;
   right:24px;
   bottom:24px;
@@ -1102,2759 +1232,130 @@ summary:hover {
   transform:translateY(10px);
   transition:.2s
 }
-.back-top.show {
+
+.back-top.show{
   opacity:1;
   pointer-events:auto;
   transform:translateY(0)
 }
-@media(max-width:1180px) {
-  .manager-badge {
-    display:none
-  }
+
+@media(max-width:1180px){
+  .manager-badge{display:none}
 }
-@media(max-width:1080px) {
-  .mobile-nav-wrap {
+
+@media(max-width:1080px){
+  .mobile-nav-wrap{
     display:block;
     position:sticky;
     top:82px;
     z-index:850
   }
-  .layout {
+
+  .layout{
     padding-top:22px
   }
-  .hero {
+
+  .hero{
     min-height:520px
   }
 }
-@media(max-width:760px) {
-   .header-inner {
-      height:70px
-   }
-   .brand-logo {
-      height:37px!important;
-      max-width:106px
-   }
-   .mobile-nav-wrap {
-      top:70px
-   }
-   .mobile-nav-inner {
-      padding:9px 14px
-   }
-   .top-actions .primary {
-      padding:10px 12px;
-      font-size:12px
-   }
-   .hero {
-      min-height:auto;
-      padding-bottom:38px
-   }
-   .hero h1 {
-      font-size:46px
-   }
-   .hero-kicker {
-      font-size:10px;
-      line-height:1.3
-   }
-   .footer-logo {
-      width:130px
-   }
-   .back-top {
-      right:14px;
-      bottom:14px;
-      width:42px;
-      height:42px
-   }
-}
-@media print {
-   .mobile-nav-wrap,.back-top,.manager-badge {
-      display:none!important
-   }
-}
-   </style>
-  </head>
-  <body>
-   <div class="progress-top" id="progressTop">
-   </div>
-   <header class="site-header">
-     <div class="header-inner">
-      <a class="brand" href="#inicio">
-       <img alt="GEX" class="brand-logo" data-gex-logo="1" src=""/>
-       <div class="brand-label">
-        <span>
-         Guia do Gestor
-        </span>
-        Recrutei na Prática
-       </div>
-      </a>
-      <div class="search-wrap">
-       <div class="search">
-        <input aria-label="Buscar no manual" id="searchInput" placeholder="Buscar: entrevista, scorecard, reprovação..." type="search"/>
-        <span class="sicon">
-         ⌕
-        </span>
-       </div>
-      </div>
-      <div class="top-actions">
-       <span class="manager-badge">
-        Exclusivo para gestores
-       </span>
-       <button class="btn ghost" onclick="window.print()">
-        Imprimir
-       </button>
-       <a class="btn primary" href="https://app.recrutei.com.br/" rel="noopener" target="_blank">
-    Abrir Recrutei ↗
-   </a>
-  </div>
- </div>
-</header>
-<div class="mobile-nav-wrap" id="mobileNavWrap">
- <div class="mobile-nav-inner">
-  <label for="mobileNav">
-   Ir para:
-  </label>
-  <select aria-label="Navegar pelas seções do guia" id="mobileNav">
-   <option value="#inicio">
-    Comece aqui
-   </option>
-   <option value="#papel">
-    Seu papel
-   </option>
-   <option value="#acesso">
-    01 · Acesso
-   </option>
-   <option value="#vaga">
-    02 · Abrir vaga
-   </option>
-   <option value="#avaliacao">
-    03 · Avaliação
-   </option>
-   <option value="#entrevista">
-    04 · Entrevista
-   </option>
-   <option value="#decisao">
-    05 · Decisão
-   </option>
-   <option value="#contratacao">
-    06 · Decisão final
-   </option>
-   <option value="#consulta">
-    07 · Consulta rápida
-   </option>
-   <option value="#pratica">
-    Prática &amp; checklist
-   </option>
-   <option value="#referencias">
-    Referências
-   </option>
-  </select>
- </div>
-</div>
-<div class="layout">
- <aside class="sidebar">
-  <div class="side-kicker">
-   Navegue pelo guia
-  </div>
-  <nav class="side-nav" id="sideNav">
-   <a href="#inicio">
-    Comece aqui
-   </a>
-   <a href="#papel">
-    Seu papel
-   </a>
-   <a href="#acesso">
-    01 · Acesso
-   </a>
-   <a href="#vaga">
-    02 · Abrir vaga
-   </a>
-   <a href="#avaliacao">
-    03 · Avaliação
-   </a>
-   <a href="#entrevista">
-    04 · Entrevista
-   </a>
-   <a href="#decisao">
-    05 · Decisão
-   </a>
-   <a href="#contratacao">
-    06 · Decisão final
-   </a>
-   <a href="#consulta">
-    07 · Consulta rápida
-   </a>
-   <a href="#pratica">
-    Prática &amp; checklist
-   </a>
-   <a href="#referencias">
-    Referências
-   </a>
- </nav>
- <div class="sidebar-note">
-  <strong>
-   Guia exclusivo do gestor
-  </strong>
-  Aqui você encontra apenas o que precisa fazer, avaliar, registrar e decidir. Configurações administrativas ficam fora desta trilha.
- </div>
-</aside>
-<main class="main" id="manual">
- <section class="hero searchable" data-title="comece aqui recrutei na pratica guia gestor" id="inicio">
-  <div class="hero-kicker">
-   GEX · Recrutamento &amp; Seleção · Guia exclusivo do Gestor
-  </div>
-  <h1>
-   Recrutei
-   <br/>
-   na prática.
-  </h1>
-  <p>
-   Da necessidade da vaga à sua recomendação final — um guia para o gestor conduzir sua participação no processo seletivo com clareza, critério e responsabilidade.
-  </p>
-  <div class="hero-actions">
-   <a class="btn primary" href="#atalhos">
-    Quero começar →
-   </a>
-   <a class="btn ghost" href="#consulta">
-    Preciso resolver algo
-   </a>
-  </div>
-  <div class="tagline">
-   Aprenda. Pratique. Registre. Decida.
-  </div>
-  <div class="hero-mini">
-   <span>
-    Jeito GEX
-   </span>
-   <strong>
-    Garra · Execução · Autonomia
-   </strong>
-   <p>
-    A plataforma organiza o processo. A qualidade da contratação depende do critério de quem decide.
-   </p>
-  </div>
- </section>
- <section class="section searchable" data-title="o que você precisa fazer atalhos abrir vaga avaliar candidatos entrevistar registrar parecer avançar reprovar contratar" id="atalhos">
-  <div class="section-head">
-   <div>
-    <div class="eyebrow">
-      Encontre rápido
-    </div>
-    <h2>
-      O que você precisa fazer?
-    </h2>
-    <p class="section-lead">
-      Entre pelo que você precisa fazer como gestor. O guia mostra somente as ações, decisões e cuidados que fazem parte da sua participação na seleção.
-    </p>
-   </div>
-   <span class="pill essential">
-    Essencial para o gestor
-   </span>
-  </div>
-  <div class="quick-grid">
-   <a class="quick-card" href="#vaga">
-    <span class="qnum">
-      01
-    </span>
-    <strong>
-      Abrir uma vaga
-    </strong>
-    <p>
-      Alinhar necessidade, briefing, solicitação e publicação.
-    </p>
-   </a>
-   <a class="quick-card" href="#avaliacao">
-    <span class="qnum">
-      02
-    </span>
-    <strong>
-      Avaliar candidatos
-    </strong>
-    <p>
-      Currículo, evidências, cultura, scorecard, testes e IA.
-    </p>
-   </a>
-   <a class="quick-card" href="#entrevista">
-    <span class="qnum">
-    03
-   </span>
-   <strong>
-    Entrevistar
-   </strong>
-   <p>
-    Preparar a conversa, aprofundar evidências e registrar parecer.
-   </p>
-  </a>
-  <a class="quick-card" href="#decisao">
-   <span class="qnum">
-    04
-   </span>
-   <strong>
-    Tomar uma decisão
-   </strong>
-   <p>
-    Avançar, mover, reprovar e comunicar com segurança.
-   </p>
-  </a>
-  <a class="quick-card" href="#contratacao">
-   <span class="qnum">
-    05
-   </span>
-   <strong>
-    Fechar a decisão
-   </strong>
-   <p>
-    Consolidar evidências, registrar sua recomendação e sinalizar o próximo passo.
-   </p>
-  </a>
-  <a class="quick-card" href="#consulta">
-   <span class="qnum">
-    06
-   </span>
-   <strong>
-    Resolver um problema
-   </strong>
-   <p>
-    Convite, vaga sumida, mensagem, acesso, suporte e privacidade.
-   </p>
-  </a>
- </div>
-</section>
-<section class="section searchable" data-title="seu papel gestor cultura garra execução autonomia responsabilidades decisão evidências" id="papel">
- <div class="section-head">
-  <div>
-   <div class="eyebrow">
-    Seu papel
-   </div>
-   <h2>
-    Contratar também é gerir.
-   </h2>
-   <p class="section-lead">
-    Este guia parte de uma regra simples: o gestor entra com contexto, critério técnico, evidências e decisão responsável.
-   </p>
-  </div>
- </div>
- <div class="grid-3">
-  <div class="card culture-card">
-   <div class="culture-word">
-    Garra
-   </div>
-   <div class="culture-action">
-    Investigue uma dúvida antes de descartar um perfil. Quando houver bloqueio, sinalize e busque o apoio necessário.
-   </div>
-  </div>
-  <div class="card culture-card">
-   <div class="culture-word">
-    Execução
-   </div>
-   <div class="culture-action">
-    Defina o que precisa avaliar, registre seu parecer e dê clareza ao próximo passo.
-   </div>
-  </div>
-  <div class="card culture-card">
-   <div class="culture-word">
-    Autonomia
-   </div>
-   <div class="culture-action">
-    Decida dentro da sua alçada, dê visibilidade e não altere critérios ou condições sem alinhamento.
-   </div>
-  </div>
- </div>
- <div style="height:16px">
- </div>
- <div class="grid-2">
-  <div class="card">
-   <h3>
-    O que é responsabilidade do gestor
-   </h3>
-   <p>
-    Explicar a necessidade da contratação, validar o que é indispensável, avaliar competência técnica e comportamentos relevantes, registrar evidências e emitir sua recomendação.
-   </p>
-  </div>
-  <div class="card">
-   <h3>
-    Quando sua ação depende de outra alçada
-   </h3>
-   <p>
-    Não tente contornar a etapa. Sinalize a pendência pelo canal responsável e aguarde a liberação ou orientação antes de seguir.
-   </p>
-  </div>
- </div>
- <div class="callout info">
-  <strong>
-   Importante
-  </strong>
-  Ser gestor não significa ter todas as permissões da Recrutei. Use apenas as funções liberadas para o seu perfil e para as vagas em que você participa.
- </div>
-</section>
-<section class="section searchable" data-title="acesso primeiro login senha convite permissão vaga não aparece segurança gestor" id="acesso">
- <div class="section-head">
-  <div>
-   <div class="eyebrow">
-    01 · Acesso
-   </div>
-   <h2>
-    Entre, encontre sua vaga e saiba o que fazer se algo não aparecer.
-   </h2>
-   <p class="section-lead">
-    Use sua conta profissional e não crie atalhos para contornar permissões.
-   </p>
-  </div>
-  <span class="pill essential">
-   Essencial
-  </span>
- </div>
- <div class="path">
-  app.recrutei.com.br
- </div>
- <div class="steps">
-  <div class="step">
-   <div class="step-num">
-    01
-   </div>
-   <div>
-    <strong>
-     Abra o convite
-    </strong>
-    <p>
-     Localize o e-mail enviado pela Recrutei e confirme que está usando seu endereço profissional.
-    </p>
-   </div>
-  </div>
-  <div class="step">
-   <div class="step-num">
-    02
-   </div>
-   <div>
-    <strong>
-     Defina sua senha
-    </strong>
-    <p>
-     Use uma senha exclusiva e não encaminhe o link de definição de senha.
-    </p>
-   </div>
-  </div>
-  <div class="step">
-   <div class="step-num">
-    03
-   </div>
-   <div>
-    <strong>
-     Complete seu cadastro
-    </strong>
-    <p>
-     Finalize os dados solicitados e entre no ambiente profissional da GEX.
-    </p>
-   </div>
-  </div>
-  <div class="step">
-   <div class="step-num">
-    04
-   </div>
-   <div>
-    <strong>
-     Localize sua vaga
-    </strong>
-    <p>
-     Confira se as vagas sob sua responsabilidade aparecem no ambiente correto.
-    </p>
-   </div>
-  </div>
- </div>
- <div class="accordion">
-  <details>
-   <summary>
-    O convite não chegou
-   </summary>
-   <div class="detail-body">
-    <p>
-     Confira spam, lixo eletrônico e o endereço profissional informado. Se ainda não localizar, acione o canal interno responsável pelo seu acesso.
-    </p>
-   </div>
-  </details>
-  <details>
-   <summary>
-    Esqueci a senha
-   </summary>
-   <div class="detail-body">
-    <div class="path">
-     Tela de login
-     <span>
-       ›
-     </span>
-     recuperação de senha
-    </div>
-    <p>
-     Informe seu e-mail cadastrado e use o link
-     <b>
-       REDEFINIR SENHA
-     </b>
-     . Se não funcionar, peça suporte. Não crie uma segunda conta.
-    </p>
-   </div>
-  </details>
-  <details>
-   <summary>
-    Não vejo a vaga ou uma função
-   </summary>
-   <div class="detail-body">
-    <ol>
-     <li>
-       Confirme se está na conta correta.
-     </li>
-     <li>
-       Limpe os filtros e confira a situação da vaga.
-     </li>
-     <li>
-       Se continuar sem acesso, solicite a verificação da permissão necessária para aquela tarefa.
-     </li>
-    </ol>
-    <div class="callout warn">
-     <strong>
-       Não contorne bloqueios
-     </strong>
-     Nunca use a conta de outra pessoa para executar uma ação.
-    </div>
-   </div>
-  </details>
- </div>
- <div class="callout ok">
-  <strong>
-   Pronto quando…
-  </strong>
-  Você acessa sua conta, encontra as vagas em que participa e sabe pedir ajuda sem duplicar contas ou usar credenciais de terceiros.
- </div>
-</section>
-<section class="section searchable" data-title="vaga solicitação briefing requisitos criar publicar perguntas anúncio acompanhar gestor aprovação" id="vaga">
- <div class="section-head">
-  <div>
-   <div class="eyebrow">
-    02 · Vagas
-   </div>
-   <h2>
-    Da necessidade à vaga pronta para seguir.
-   </h2>
-  <p class="section-lead">
-   Como gestor, seu principal papel aqui é dar clareza ao porquê da contratação, às entregas esperadas e aos critérios de decisão.
-  </p>
- </div>
- <span class="pill essential">
-  Essencial
- </span>
-</div>
-<div class="accordion">
- <details open="">
-  <summary>
-   1. Faça uma boa solicitação
-  </summary>
-  <div class="detail-body">
-   <div class="path">
-    Criar
-    <span>
-     ›
-    </span>
-    Criar Solicitação de Vaga
-   </div>
-   <div class="steps">
-    <div class="step">
-     <div class="step-num">
-       01
-     </div>
-     <div>
-       <strong>
-        Explique a necessidade
-       </strong>
-       <p>
-        Cargo, quantidade, motivo da contratação e prioridade.
-       </p>
-     </div>
-    </div>
-    <div class="step">
-     <div class="step-num">
-       02
-     </div>
-     <div>
-       <strong>
-        Revise as condições
-       </strong>
-       <p>
-        Informe apenas modalidade, regime, remuneração e benefícios que já estejam aprovados.
-       </p>
-     </div>
-    </div>
-    <div class="step">
-     <div class="step-num">
-       03
-     </div>
-     <div>
-       <strong>
-        Envie e acompanhe
-       </strong>
-       <p>
-        Acompanhe a situação da solicitação e responda às pendências que dependerem de você.
-       </p>
-     </div>
-    </div>
-   </div>
-   <div class="callout info">
-    <strong>
-     Se você também for aprovador
-    </strong>
-    Analise necessidade, impacto e condições antes de aprovar. Não aprove apenas para retirar uma pendência da fila.
-   </div>
-  </div>
- </details>
- <details>
-  <summary>
-   2. Faça o briefing que evita retrabalho
-  </summary>
-  <div class="detail-body">
-   <table class="role-table">
-    <thead>
-     <tr>
-       <th>
-        Pergunta
-       </th>
-       <th>
-        O que você precisa deixar claro
-       </th>
-     </tr>
-    </thead>
-   <tbody>
-    <tr>
-      <td>
-       Por que contratar?
-      </td>
-      <td>
-       Problema de negócio, substituição ou crescimento, urgência e quantidade de posições.
-      </td>
-    </tr>
-    <tr>
-      <td>
-       O que a pessoa precisa entregar?
-      </td>
-      <td>
-       Três resultados esperados e o contexto de atuação.
-      </td>
-    </tr>
-    <tr>
-      <td>
-       O que é indispensável?
-      </td>
-      <td>
-       Competências necessárias desde o início e o que pode ser aprendido depois.
-      </td>
-    </tr>
-    <tr>
-      <td>
-       Quais condições já estão definidas?
-      </td>
-      <td>
-       Somente condições confirmadas e dentro da alçada aprovada.
-      </td>
-    </tr>
-    <tr>
-      <td>
-       Como você vai avaliar?
-      </td>
-      <td>
-       Critérios técnicos, exemplos de evidência e quem participa da decisão.
-      </td>
-    </tr>
-   </tbody>
-  </table>
-  <div class="callout ok">
-   <strong>
-    Critério bom tem evidência
-   </strong>
-   Troque “perfil proativo” por algo observável, como: identifica um problema, propõe alternativas, alinha impacto e acompanha o resultado.
-  </div>
- </div>
-</details>
-<details>
- <summary>
-  3. Se a criação/publicação estiver liberada para você
- </summary>
- <div class="detail-body">
-  <div class="path">
-   Criar
-   <span>
-    ›
-   </span>
-   Criar e Publicar Vaga
-   <span>
-    ›
-   </span>
-   Vaga sem Ultra
-  </div>
-  <ol>
-   <li>
-    Confira título, departamento, quantidade de posições, local/modalidade e condições.
-   </li>
-   <li>
-    Revise se o texto da vaga reflete o briefing aprovado.
-   </li>
-   <li>
-    Confirme que as etapas e os critérios permitem avaliar o que você definiu como essencial.
-   </li>
-   <li>
-    Revise antes de publicar. Se houver qualquer informação não confirmada, não presuma.
-   </li>
-  </ol>
-  <div class="callout warn">
-   <strong>
-    Seu foco
-   </strong>
-   Garanta coerência entre necessidade, escopo, nível da vaga e critérios de avaliação. Configurações que não estiverem sob sua permissão devem ser tratadas pelo canal responsável.
-    </div>
-   </div>
-  </details>
-  <details>
-   <summary>
-    4. Depois de publicar, acompanhe sua parte
-   </summary>
-   <div class="detail-body">
-    <div class="path">
-     Vagas
-     <span>
-      ›
-     </span>
-     busca e filtros
-     <span>
-      ›
-     </span>
-     vaga desejada
-    </div>
-    <div class="decision-flow">
-     <div class="flow-item">
-      <strong>
-        Rascunho
-      </strong>
-      <small>
-        Ainda não está ativa.
-      </small>
-     </div>
-     <div class="flow-item">
-      <strong>
-        Publicada
-      </strong>
-      <small>
-        A seleção está em andamento.
-      </small>
-     </div>
-     <div class="flow-item">
-      <strong>
-        Congelada
-      </strong>
-      <small>
-        O processo está pausado.
-      </small>
-     </div>
-     <div class="flow-item">
-      <strong>
-        Encerrada
-      </strong>
-      <small>
-        O processo foi finalizado.
-      </small>
-     </div>
-    </div>
-    <p>
-     Use a visão da vaga para localizar candidatos que aguardam sua avaliação, entrevistas pendentes e decisões que dependem de você.
-    </p>
-    <div class="callout warn">
-     <strong>
-      Prazo de inscrição ≠ fim do processo
-     </strong>
-     O encerramento das inscrições não significa que todas as avaliações foram concluídas.
-    </div>
-   </div>
-  </details>
- </div>
-</section>
-<section class="section searchable" data-title="avaliação candidato evidência currículo requisitos cultura scorecard disc testes ia matching gestor" id="avaliacao">
- <div class="section-head">
-  <div>
-   <div class="eyebrow">
-    03 · Avaliação
-   </div>
-   <h2>
-    Troque impressão por evidência.
-   </h2>
-   <p class="section-lead">
-    Seu papel é comparar o que a vaga exige com o que o candidato consegue demonstrar — não decidir por afinidade pessoal.
-   </p>
-  </div>
-  <span class="pill essential">
-   Essencial
-  </span>
- </div>
- <div class="steps">
-  <div class="step">
-   <div class="step-num">
-   01
-  </div>
-  <div>
-   <strong>
-    Releia os critérios
-   </strong>
-   <p>
-    Tenha requisitos essenciais e evidências esperadas em mãos.
-   </p>
-  </div>
- </div>
- <div class="step">
-  <div class="step-num">
-   02
-  </div>
-  <div>
-   <strong>
-    Abra o perfil completo
-   </strong>
-   <p>
-    Leia currículo, respostas profissionais e histórico disponível antes da conversa.
-   </p>
-  </div>
- </div>
- <div class="step">
-  <div class="step-num">
-   03
-  </div>
-  <div>
-   <strong>
-    Confronte requisito e evidência
-   </strong>
-   <p>
-    Classifique mentalmente cada ponto como demonstrado, a confirmar ou não atendido.
-   </p>
-  </div>
- </div>
- <div class="step">
-  <div class="step-num">
-   04
-  </div>
-  <div>
-   <strong>
-    Transforme lacunas em perguntas
-   </strong>
-   <p>
-    Ausência de informação no currículo não prova ausência de competência.
-   </p>
-  </div>
- </div>
- <div class="step">
-  <div class="step-num">
-   05
-  </div>
-  <div>
-   <strong>
-    Registre sua avaliação
-   </strong>
-   <p>
-    Deixe claro o que sustentou sua recomendação.
-   </p>
-  </div>
- </div>
-</div>
-<div class="grid-2">
- <div class="card">
-  <h3>
-   Capacidade técnica
-  </h3>
-  <p>
-   Como fez, quais escolhas tomou, limites encontrados e resultado.
-  </p>
- </div>
- <div class="card">
-  <h3>
-   Resolução de problemas
-  </h3>
-  <p>
-   Investiga causas e compara alternativas antes de agir.
-  </p>
- </div>
- <div class="card">
-  <h3>
-   Execução
-  </h3>
-  <p>
-   Conecta prioridade, prazo, qualidade e resultado.
-  </p>
- </div>
- <div class="card">
-  <h3>
-   Autonomia responsável
-  </h3>
-  <p>
-   Decide na sua alçada, comunica impactos e sabe quando pedir ajuda.
-  </p>
- </div>
-</div>
-<div class="accordion" style="margin-top:16px">
- <details>
-  <summary>
-   Avalie Garra, Execução e Autonomia sem confundir com afinidade
-  </summary>
-  <div class="detail-body">
-   <h4>
-    Garra
-   </h4>
-   <p>
-    <b>
-      Pergunte:
-    </b>
-    “Conte sobre um problema que bloqueou uma entrega. O que você investigou, quais alternativas tentou e quando pediu ajuda?”
-   </p>
-   <h4>
-    Execução
-   </h4>
-   <p>
-    <b>
-      Pergunte:
-    </b>
-    “Descreva uma situação em que havia mais demandas do que tempo. Como definiu prioridades e renegociou o que não cabia?”
-   </p>
-   <h4>
-    Autonomia
-   </h4>
-   <p>
-    <b>
-      Pergunte:
-    </b>
-    “Fale de uma decisão que tomou sem ter todas as informações. O que podia decidir e o que precisou alinhar?”
-   </p>
-   <div class="callout danger">
-    <strong>
-      Evite “parece com a gente”
-    </strong>
-    Estilo de roupa, sotaque, extroversão, hobbies ou afinidade pessoal não são evidências de cultura. Busque situação, ação e resultado.
-   </div>
-  </div>
- </details>
- <details>
-  <summary>
-   Use o scorecard para registrar sua avaliação
-  </summary>
-  <div class="detail-body">
-   <div class="path">
-    Perfil do candidato
-    <span>
-      ›
-    </span>
-    Formulário de Avaliação
-   </div>
-   <ol>
-    <li>
-      Escolha o formulário indicado para aquela etapa.
-    </li>
-    <li>
-      Avalie somente o que você de fato conseguiu observar.
-    </li>
-    <li>
-      Salve e confira o registro.
-    </li>
-    <li>
-      Quando houver campo de comentário, conecte a avaliação a um exemplo concreto.
-    </li>
-   </ol>
-   <div class="callout warn">
-    <strong>
-      Não misture indicadores
-    </strong>
-    Nota geral, avaliação por habilidade e matching respondem a perguntas diferentes. Não transforme indicadores diferentes em uma “média” informal.
-   </div>
-  </div>
-  </details>
-  <details>
-   <summary>
-     Testes, DISC e IA: apoio, não veredito
-   </summary>
-   <div class="detail-body">
-     <p>
-      Quando esses recursos estiverem disponíveis no processo, use-os como apoio à conversa e à análise — nunca como decisão automática.
-     </p>
-     <ul>
-      <li>
-       <b>
-         Teste:
-       </b>
-       interprete o resultado à luz da atividade real da vaga.
-      </li>
-      <li>
-       <b>
-         DISC:
-       </b>
-       use como ponto de conversa, não como diagnóstico ou motivo isolado de reprovação.
-      </li>
-      <li>
-       <b>
-         Matching:
-       </b>
-       consulte o detalhamento e investigue lacunas; percentual alto não garante aderência.
-      </li>
-      <li>
-       <b>
-         IA:
-       </b>
-       revise resumos, notas e recomendações com as informações reais do candidato.
-      </li>
-     </ul>
-   </div>
-  </details>
- </div>
- <div class="callout ok">
-  <strong>
-   Pronto quando…
-  </strong>
-  Outra pessoa consegue entender sua recomendação olhando os requisitos, as evidências e seu registro — sem depender de “gostei” ou “não gostei”.
- </div>
-</section>
-<section class="section searchable" data-title="entrevista agenda calendário roteiro 40 minutos parecer modelo comunicação perguntas" id="entrevista">
- <div class="section-head">
-  <div>
-   <div class="eyebrow">
-     04 · Entrevistas
-   </div>
-   <h2>
-     Conduza uma conversa com foco.
-   </h2>
-   <p class="section-lead">
-     Chegue preparado, aprofunde evidências, respeite a experiência do candidato e registre enquanto as informações estão frescas.
-   </p>
-  </div>
-  <span class="pill essential">
-   Essencial
-  </span>
- </div>
- <div class="grid-2">
-  <div class="card">
-   <h3>
-     Antes
-   </h3>
-   <p>
-     Releia currículo, respostas e registros. Escolha as dúvidas prioritárias e o que precisa ser comprovado.
-   </p>
-  </div>
-  <div class="card">
-   <h3>
-     Depois
-   </h3>
-   <p>
-     Registre o parecer imediatamente e combine próximo passo, responsável e data.
-   </p>
-  </div>
- </div>
- <div class="path">
-  Perfil do candidato
-  <span>
-   ›
-  </span>
-  Agendar Reunião com o talento
-</div>
-<table class="role-table">
- <thead>
-  <tr>
-   <th>
-    Tempo
-   </th>
-   <th>
-    Condução sugerida
-   </th>
-  </tr>
- </thead>
- <tbody>
-  <tr>
-   <td>
-    0–5 min
-   </td>
-   <td>
-    Contexto da vaga, tempo disponível e estrutura da conversa.
-   </td>
-  </tr>
-  <tr>
-   <td>
-    5–20 min
-   </td>
-   <td>
-    Explore uma entrega relevante: problema, participação individual, escolhas e resultado.
-   </td>
-  </tr>
-  <tr>
-   <td>
-    20–30 min
-   </td>
-   <td>
-    Aprofunde aspectos técnicos e comportamentos de Garra, Execução e Autonomia.
-   </td>
-  </tr>
-  <tr>
-   <td>
-    30–35 min
-   </td>
-   <td>
-    Esclareça lacunas e condições ainda não alinhadas, sem prometer aprovação.
-   </td>
-  </tr>
-  <tr>
-   <td>
-    35–40 min
-   </td>
-   <td>
-    Abra para perguntas e explique próximo passo e responsável pelo contato.
-   </td>
-  </tr>
- </tbody>
-</table>
-<div class="callout warn">
- <strong>
-  Alerta de segurança
- </strong>
- Se a agenda pedir uma autorização inesperada ou aplicativo não verificado, interrompa a conexão e valide com canal técnico responsável.
-</div>
-<h3 style="margin-top:28px">
- Modelo de parecer
-</h3>
-<div class="template" id="parecerTemplate">
- <button class="copy-btn" data-copy="parecerTemplate">
-  Copiar modelo
- </button>
- <strong>
-  Vaga e etapa:
- </strong>
- [identificação]
- <strong>
-  Data e avaliador:
- </strong>
- [preencher]
- <strong>
-  Recomendação:
- </strong>
- avançar / esclarecer / não avançar.
- <strong>
-  Evidências técnicas:
- </strong>
- requisito + exemplo + resultado.
- <strong>
-  Jeito de trabalhar:
-  </strong>
-  comportamento observado + situação.
-  <strong>
-   Pontos a confirmar:
-  </strong>
-  pergunta específica ou atividade necessária.
-  <strong>
-   Risco ou lacuna relevante:
-  </strong>
-  impacto no trabalho, sem rótulos pessoais.
-  <strong>
-   Próximo passo:
-  </strong>
-  ação + responsável + data combinada.
- </div>
- <div class="callout danger">
-  <strong>
-   O que fica de fora
-  </strong>
-  Não registre “não tem perfil”, “energia estranha” ou “parece difícil” sem fato pertinente e observável. Não use aparência, vida familiar ou informação sensível como atalho para decidir.
- </div>
-</section>
-<section class="section searchable" data-title="decisão avançar mover etapa reprovar candidato gestor evidência próximo passo" id="decisao">
- <div class="section-head">
-  <div>
-   <div class="eyebrow">
-    05 · Decisões
-   </div>
-   <h2>
-    Decida com evidência e confira antes de agir.
-   </h2>
-   <p class="section-lead">
-    Sua recomendação precisa ser clara. A ação na plataforma deve refletir exatamente a decisão tomada para aquela etapa.
-   </p>
-  </div>
-  <span class="pill essential">
-   Essencial
-  </span>
- </div>
- <div class="decision-flow">
-  <div class="flow-item">
-   <strong>
-    Avançar
-   </strong>
-   <small>
-    Há evidência suficiente para seguir à próxima etapa.
-   </small>
-  </div>
-  <div class="flow-item">
-   <strong>
-    Esclarecer
-   </strong>
-   <small>
-    Ainda existe uma dúvida relevante que precisa ser investigada.
-   </small>
-  </div>
-  <div class="flow-item">
-   <strong>
-    Não avançar
-   </strong>
-   <small>
-    Um requisito relevante não foi atendido e há evidência para sustentar a decisão.
-   </small>
-  </div>
-  <div class="flow-item">
-   <strong>
-    Decisão final
-   </strong>
-   <small>
-    Consolide sua recomendação e sinalize o próximo passo.
-   </small>
-  </div>
- </div>
- <div class="accordion">
-  <details open="">
-   <summary>
-    Como avançar com segurança
-   </summary>
-   <div class="detail-body">
-    <ol>
-     <li>
-      Abra a vaga e o candidato corretos.
-     </li>
-     <li>
-      Releia os critérios da etapa.
-     </li>
-     <li>
-       Confira seu parecer ou avaliação registrada.
-     </li>
-     <li>
-       Execute apenas a ação que corresponde à decisão tomada.
-     </li>
-     <li>
-       Confira a nova etapa e o histórico após a ação.
-     </li>
-    </ol>
-    <div class="callout warn">
-     <strong>
-       Atenção
-     </strong>
-     Mover um candidato pode acionar comunicações ou regras já configuradas. Antes de confirmar, confira o que a tela informa.
-    </div>
-   </div>
-  </details>
-  <details>
-   <summary>
-    Quando a recomendação for não avançar
-   </summary>
-   <div class="detail-body">
-    <p>
-     Registre um motivo relacionado à vaga e sustentado por evidência. Evite justificativas vagas como “não tem perfil”, “não gostei” ou “não combinou”.
-    </p>
-    <div class="callout info">
-     <strong>
-       Se perceber um erro depois
-     </strong>
-     Não tente corrigir clicando repetidamente. Preserve o histórico e acione o canal responsável para orientar o ajuste.
-    </div>
-   </div>
-  </details>
-  <details>
-   <summary>
-    Quando ainda faltar informação
-   </summary>
-   <div class="detail-body">
-    <p>
-     Não force uma decisão para encerrar a pendência. Transforme a lacuna em uma pergunta objetiva e registre o que precisa ser confirmado antes de avançar.
-    </p>
-   </div>
-  </details>
- </div>
- <div class="callout ok">
-  <strong>
-   Pronto quando…
-  </strong>
-  Sua decisão está registrada, é justificável pelos critérios da vaga e o próximo passo ficou claro.
- </div>
-</section>
-<section class="section searchable" data-title="contratação decisão final gestor recomendação proposta condições aprovação fechamento" id="contratacao">
- <div class="section-head">
-  <div>
-   <div class="eyebrow">
-    06 · Decisão final
-   </div>
-   <h2>
-    Feche sua participação sem deixar pontas soltas.
-   </h2>
-   <p class="section-lead">
-    Para o gestor, o fechamento significa consolidar a decisão, confirmar o que está dentro da sua alçada e sinalizar claramente o próximo passo.
-   </p>
-  </div>
-  <span class="pill essential">
-   Essencial
-  </span>
- </div>
- <div class="steps">
-  <div class="step">
-   <div class="step-num">
-    01
-   </div>
-   <div>
-    <strong>
-     Consolide as evidências
-    </strong>
-    <p>
-     Revise avaliações, entrevista e eventuais dúvidas que precisavam ser esclarecidas.
-    </p>
-   </div>
-  </div>
-  <div class="step">
-   <div class="step-num">
-    02
-   </div>
-   <div>
-    <strong>
-     Registre sua recomendação final
-    </strong>
-    <p>
-     Deixe claro se recomenda contratar, não contratar ou se ainda falta alguma validação.
-    </p>
-   </div>
-  </div>
-  <div class="step">
-   <div class="step-num">
-    03
-   </div>
-   <div>
-    <strong>
-     Confira condições dentro da sua alçada
-    </strong>
-    <p>
-     Não prometa remuneração, data de início, benefício ou condição que ainda não esteja confirmada.
-    </p>
-   </div>
-  </div>
-  <div class="step">
-   <div class="step-num">
-    04
-   </div>
-   <div>
-    <strong>
-     Sinalize o próximo passo
-    </strong>
-    <p>
-     Encaminhe a decisão pelo fluxo definido e permaneça disponível caso haja alguma pendência que dependa do gestor.
-    </p>
-   </div>
-  </div>
- </div>
- <div class="callout warn">
-  <strong>
-   Importante
-  </strong>
-  Sua aprovação ou recomendação como gestor não substitui as demais aprovações e etapas formais de contratação/admissão.
- </div>
- <div class="callout ok">
-  <strong>
-   Pronto quando…
-  </strong>
-  Sua decisão final está registrada, as condições não foram presumidas e não existe pendência de avaliação sob sua responsabilidade.
- </div>
-</section>
-<section class="section searchable" data-title="consulta rápida problema acesso vaga candidato mensagem segurança lgpd suporte gestor" id="consulta">
- <div class="section-head">
-  <div>
-   <div class="eyebrow">
-    07 · Consulta rápida
-   </div>
-   <h2>
-    Quando algo não funcionar.
-   </h2>
-   <p class="section-lead">
-    Investigue o básico antes de repetir ações. Um segundo clique pode alterar etapa, duplicar uma ação ou confundir o histórico.
-   </p>
-  </div>
- </div>
- <div class="accordion">
-  <details>
-   <summary>
-    Não recebi o convite
-   </summary>
-   <div class="detail-body">
-    <p>
-     Confira e-mail cadastrado e spam. Se não localizar, solicite o reenvio pelo canal interno responsável.
-    </p>
-   </div>
-  </details>
-  <details>
-   <summary>
-    Não vejo a vaga
-   </summary>
-   <div class="detail-body">
-    <p>
-     Confira conta, filtros e situação da vaga. Se continuar sem acesso, peça a verificação da sua participação e permissão.
-    </p>
-   </div>
-  </details>
-  <details>
-  <summary>
-   Não aparece uma função
-  </summary>
-  <div class="detail-body">
-   <p>
-    O recurso pode depender de permissão ou do perfil de acesso. Solicite ajuda para a tarefa específica; não peça acesso irrestrito.
-   </p>
-  </div>
- </details>
- <details>
-  <summary>
-   O candidato “sumiu”
-  </summary>
-  <div class="detail-body">
-   <p>
-    Confira filtros, etapa, área de reprovados e histórico antes de concluir que o cadastro desapareceu.
-   </p>
-  </div>
- </details>
- <details>
-  <summary>
-   A agenda pede uma autorização estranha
-  </summary>
-  <div class="detail-body">
-   <p>
-    Não autorize por conta própria. Interrompa a conexão e valide com o canal técnico responsável.
-   </p>
-  </div>
- </details>
-</div>
-<h3 style="margin-top:30px">
- Proteja os dados e a qualidade da decisão
-</h3>
-<div class="grid-2">
- <div class="card">
-  <h3>
-   Acesso mínimo
-  </h3>
-  <p>
-   Use conta individual e consulte apenas os processos necessários à sua atuação.
-  </p>
- </div>
- <div class="card">
-  <h3>
-   Dados pertinentes
-  </h3>
-  <p>
-   Pergunte e registre somente o necessário à avaliação da vaga. Informações sensíveis não devem ser usadas como atalho para decidir.
-  </p>
- </div>
- <div class="card">
-  <h3>
-   IA com supervisão
-  </h3>
-  <p>
-   Revise resumos, notas e recomendações automáticas com as informações reais do candidato.
-  </p>
- </div>
- <div class="card">
-  <h3>
-   Compartilhamento
-  </h3>
-  <p>
-   Não envie currículo, dados de candidato ou links internos para contas pessoais, grupos abertos ou ferramentas não autorizadas.
-  </p>
- </div>
-</div>
-<h3 style="margin-top:28px">
- Precisa de ajuda?
-</h3>
-<div class="support-grid">
- <div class="support-card">
-  <span>
-   Processo seletivo
-  </span>
-  <strong>
-   Acione Pessoas &amp; Talentos
-  </strong>
-  <p>
-   Quando a dúvida for sobre fluxo, critérios, decisão ou uma etapa que dependa de alinhamento.
-  </p>
- </div>
- <div class="support-card">
-  <span>
-   Acesso ou segurança
-  </span>
-   <strong>
-    Acione o canal técnico
-   </strong>
-   <p>
-    Quando a dúvida for permissão, login, integração ou alerta de segurança.
-   </p>
-  </div>
-  <div class="support-card">
-   <span>
-    Erro na plataforma
-   </span>
-   <strong>
-    Leve o contexto
-   </strong>
-   <p>
-    Informe vaga/código, horário, o que tentou fazer e a mensagem de erro. Nunca envie senha ou código de autenticação.
-   </p>
-  </div>
- </div>
-</section>
-<section class="section searchable" data-title="checklist gestor revisão conclusão" id="pratica">
- <div class="section-head">
-  <div>
-   <div class="eyebrow">
-    Pratique e confira
-   </div>
-   <h2>
-    Da teoria à atuação do gestor.
-   </h2>
-   <p class="section-lead">
-    Use este exercício para testar se você consegue conduzir sua parte da seleção com clareza e evidência.
-   </p>
-  </div>
- </div>
- <details style="margin-bottom:18px">
-  <summary>
-   Laboratório: sua participação em uma vaga do início ao fim
-  </summary>
-  <div class="detail-body">
-   <p>
-    <b>
-     Caso fictício:
-    </b>
-    você precisa contratar uma pessoa Full Stack Sênior para melhorar um processo financeiro interno. O trabalho exige integrações, interface utilizável pela operação e autonomia demonstrada por entregas completas.
-   </p>
-   <div class="steps">
-    <div class="step">
-     <div class="step-num">
-       01
-     </div>
-     <div>
-       <strong>
-        Prepare o briefing
-       </strong>
-       <p>
-        Defina missão, três entregas, dois requisitos indispensáveis e um diferencial.
-       </p>
-     </div>
-    </div>
-    <div class="step">
-     <div class="step-num">
-       02
-     </div>
-     <div>
-       <strong>
-        Defina como você vai avaliar
-       </strong>
-       <p>
-        Para cada requisito essencial, escreva qual evidência seria suficiente para você considerar o ponto demonstrado.
-       </p>
-     </div>
-    </div>
-    <div class="step">
-     <div class="step-num">
-       03
-     </div>
-     <div>
-       <strong>
-        Avalie dois perfis fictícios
-       </strong>
-       <p>
-        Registre evidências, dúvidas e o que ainda precisa ser confirmado. Não complete lacunas por imaginação.
-       </p>
-     </div>
-    </div>
-    <div class="step">
-    <div class="step-num">
-      04
-    </div>
-    <div>
-      <strong>
-       Prepare a entrevista
-      </strong>
-      <p>
-       Escreva uma pergunta técnica e uma comportamental para cada dúvida relevante.
-      </p>
-    </div>
-   </div>
-   <div class="step">
-    <div class="step-num">
-      05
-    </div>
-    <div>
-      <strong>
-       Registre o parecer
-      </strong>
-      <p>
-       Indique recomendação, evidências, lacunas e próximo passo.
-      </p>
-    </div>
-   </div>
-   <div class="step">
-    <div class="step-num">
-      06
-    </div>
-    <div>
-      <strong>
-       Simule a decisão final
-      </strong>
-      <p>
-       Explique o que faria você recomendar a contratação e o que ainda precisaria estar confirmado.
-      </p>
-    </div>
-   </div>
-  </div>
-  <div class="callout ok">
-   <strong>
-    Critério de conclusão
-   </strong>
-   Seu raciocínio consegue ser entendido do requisito à evidência e da evidência à decisão, sem depender de impressão pessoal.
-  </div>
- </div>
-</details>
-<h3 style="margin:28px 0 12px">
- Seu checklist de bolso
-</h3>
-<div class="checklist" id="checklist">
- <div class="check-group">
-  <h3>
-   Antes de abrir
-  </h3>
-  <label class="check-item">
-   <input data-check="1" type="checkbox"/>
-   Necessidade e motivo da contratação claros.
-  </label>
-  <label class="check-item">
-   <input data-check="2" type="checkbox"/>
-   Requisitos essenciais separados de diferenciais.
-  </label>
-  <label class="check-item">
-   <input data-check="3" type="checkbox"/>
-   Entregas esperadas e critérios de avaliação definidos.
-  </label>
-  <label class="check-item">
-   <input data-check="4" type="checkbox"/>
-   Condições informadas são somente as já confirmadas.
-  </label>
- </div>
- <div class="check-group">
-  <h3>
-   Durante a seleção
-  </h3>
-  <label class="check-item">
-   <input data-check="5" type="checkbox"/>
-   Currículo, respostas e histórico lidos antes da conversa.
-  </label>
-  <label class="check-item">
-   <input data-check="6" type="checkbox"/>
-   Avaliação baseada em evidências e requisitos da vaga.
-  </label>
-  <label class="check-item">
-   <input data-check="7" type="checkbox"/>
-    Parecer registrado com exemplos concretos.
-   </label>
-   <label class="check-item">
-    <input data-check="8" type="checkbox"/>
-    Lacunas foram transformadas em perguntas, não em suposições.
-   </label>
-   <label class="check-item">
-    <input data-check="9" type="checkbox"/>
-    Próximo passo sob minha responsabilidade está claro.
-   </label>
-  </div>
-  <div class="check-group">
-   <h3>
-    Na decisão final
-   </h3>
-   <label class="check-item">
-    <input data-check="10" type="checkbox"/>
-    Minha recomendação final está registrada.
-   </label>
-   <label class="check-item">
-    <input data-check="11" type="checkbox"/>
-    A decisão está sustentada pelos mesmos critérios usados para os candidatos.
-   </label>
-   <label class="check-item">
-    <input data-check="12" type="checkbox"/>
-    Não prometi condição ainda não aprovada.
-   </label>
-   <label class="check-item">
-    <input data-check="13" type="checkbox"/>
-    Não existe pendência de avaliação que dependa de mim.
-   </label>
-  </div>
- </div>
- <div style="display:flex;justify-content:flex-end;margin-top:10px">
-  <button class="btn" id="resetChecklist" style="background:#e9eef3;color:#45596a">
-   Limpar checklist
-  </button>
- </div>
-</section>
-<section class="section searchable" data-title="referências tutoriais oficiais central ajuda recrutei lgpd fontes" id="referencias">
- <div class="section-head">
-  <div>
-   <div class="eyebrow">
-    Referências
-   </div>
-   <h2>
-    Materiais úteis para o gestor.
-   </h2>
-   <p class="section-lead">
-    Use estas referências quando precisar confirmar um caminho da plataforma relacionado à sua própria atuação. Menus e recursos podem variar conforme perfil e atualização da Recrutei.
-   </p>
-  </div>
- </div>
- <div class="ref-grid">
-  <a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/6342221-o-primeiro-acesso" rel="noopener" target="_blank">
-   <span class="ref-num">
-    [01]
-   </span>
-   <div>
-    <strong>
-      O primeiro acesso
-    </strong>
-    <p>
-      Convite, cadastro, navegação e segurança da conta.
-    </p>
-   </div>
-   <span class="external">
-    ↗
-   </span>
-  </a>
-  <a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/6342271-como-redefinir-a-minha-senha" rel="noopener" target="_blank">
-   <span class="ref-num">
-    [02]
-   </span>
-   <div>
-    <strong>
-      Como redefinir a minha senha
-    </strong>
-    <p>
-      Recuperação de acesso do usuário profissional.
-    </p>
-   </div>
-   <span class="external">
-    ↗
-   </span>
-  </a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/8851399-solicitacao-de-vagas-entre-gestores" rel="noopener" target="_blank">
- <span class="ref-num">
-  [04]
- </span>
- <div>
-  <strong>
-    Solicitação de vagas entre gestores
-  </strong>
-  <p>
-    Requisição, aprovação e criação da vaga.
-  </p>
- </div>
- <span class="external">
-  ↗
- </span>
-</a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/5884207-criacao-de-vaga" rel="noopener" target="_blank">
- <span class="ref-num">
-  [05]
- </span>
- <div>
-  <strong>
-    Criação de Vaga
-  </strong>
-  <p>
-    Seções de cadastro, configuração e divulgação.
-  </p>
- </div>
- <span class="external">
-  ↗
- </span>
-</a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/9208508-painel-geral-de-vagas" rel="noopener" target="_blank">
- <span class="ref-num">
-  [08]
- </span>
- <div>
-  <strong>
-    Painel geral de vagas
-  </strong>
-  <p>
-    Localização, filtros e situações das vagas.
-  </p>
- </div>
- <span class="external">
-  ↗
- </span>
-</a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/9216174-analise-detalhada-de-uma-vaga" rel="noopener" target="_blank">
- <span class="ref-num">
-  [09]
- </span>
- <div>
-  <strong>
-    Análise detalhada de uma vaga
-  </strong>
-  <p>
-    Processo seletivo, navegação e ferramentas da vaga.
-  </p>
- </div>
- <span class="external">
-  ↗
- </span>
-</a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/9221185-leitura-do-perfil-card-de-um-candidato" rel="noopener" target="_blank">
- <span class="ref-num">
-  [10]
- </span>
- <div>
-  <strong>
-    Leitura do perfil (card) de um candidato
-  </strong>
-  <p>
-    Currículo, histórico, avaliações e ações no perfil.
-  </p>
- </div>
- <span class="external">
-  ↗
- </span>
-</a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/7336342-formularios-de-avaliacao-personalizados-scorecard" rel="noopener" target="_blank">
- <span class="ref-num">
-  [11]
- </span>
- <div>
-  <strong>
-    Formulários de Avaliação Personalizados (Scorecard)
-  </strong>
-  <p>
-    Criação de habilidades e registro de avaliações.
-  </p>
- </div>
- <span class="external">
-  ↗
- </span>
-</a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/11391188-testes-e-provas" rel="noopener" target="_blank">
- <span class="ref-num">
-  [12]
- </span>
- <div>
-  <strong>
-    Testes e Provas
-  </strong>
-  <p>
-    Testes técnicos, culturais e aplicação no candidato.
-  </p>
- </div>
- <span class="external">
-  ↗
- </span>
-</a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/10046055-como-visualizar-o-matching-aplicar-filtros-dos-candidatos-na-vaga-ultra" rel="noopener" target="_blank">
- <span class="ref-num">
-  [13]
- </span>
- <div>
-  <strong>
-    Matching e filtros de candidatos na vaga Ultra
-  </strong>
-  <p>
-    Leitura da aderência e detalhamento dos critérios.
-  </p>
- </div>
- <span class="external">
-  ↗
- </span>
-</a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/15033795-integracao-com-google-calendar" rel="noopener" target="_blank">
- <span class="ref-num">
-  [14]
- </span>
- <div>
-  <strong>
-    Integração com Google Calendar
-  </strong>
-  <p>
-    Conexão da agenda e reuniões com candidatos.
-  </p>
- </div>
- <span class="external">
-  ↗
- </span>
-</a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/6108266-como-registrar-a-reprovacao-de-um-candidato" rel="noopener" target="_blank">
- <span class="ref-num">
-  [15]
- </span>
- <div>
-  <strong>
-    Como registrar a reprovação de um candidato
-  </strong>
-  <p>
-    Motivos, registro de reprovação e comunicação.
-  </p>
- </div>
- <span class="external">
-  ↗
- </span>
-</a>
-<a class="ref-card" href="https://help.recrutei.com.br/pt-BR/articles/6106108-relatorios-e-metricas-de-vagas" rel="noopener" target="_blank">
- <span class="ref-num">
-  [24]
- </span>
- <div>
-  <strong>
-    Relatórios e métricas de vagas
-  </strong>
-  <p>
-    Leitura de funil, prazos e indicadores.
-  </p>
- </div>
-          <span class="external">
-           ↗
-          </span>
-         </a>
-         <a class="ref-card" href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm" rel="noopener" target="_blank">
-          <span class="ref-num">
-           [25]
-          </span>
-          <div>
-           <strong>
-             Lei Geral de Proteção de Dados Pessoais (LGPD)
-           </strong>
-           <p>
-             Lei nº 13.709/2018.
-           </p>
-          </div>
-          <span class="external">
-           ↗
-          </span>
-         </a>
-        </div>
-      </section>
-      <div class="search-empty" id="searchEmpty">
-        <strong>
-         Nenhum resultado encontrado.
-        </strong>
-        <br/>
-        Tente outra palavra, como “vaga”, “parecer”, “reprovação” ou “acesso”.
-      </div>
-      <footer class="footer">
-        <div class="footer-grid">
-         <div>
-          <img alt="GEX" class="footer-logo" data-gex-logo="1" src=""/>
-          <h3 style="font-size:28px;margin:0 0 8px;color:#fff">
-           Recrutei na Prática
-          </h3>
-          <p style="margin:0">
-           Garra para investigar. Execução para dar o próximo passo. Autonomia para decidir com responsabilidade.
-          </p>
-         </div>
-         <div>
-          <strong>
-           Escopo do guia
-          </strong>
-          <p>
-           Conteúdo dedicado ao gestor: necessidade da vaga, critérios, avaliação, entrevista, parecer e decisão.
-          </p>
-          <small>
-           Quando uma ação depender de outra permissão ou alçada, utilize o canal interno responsável.
-          </small>
-         </div>
-        </div>
-      </footer>
-     </main>
-   </div>
-   <script>
-     const progress=document.getElementById('progressTop');
-window.addEventListener('scroll',()=> {
-   const h=document.documentElement.scrollHeight-innerHeight;
-   progress.style.width=(h?scrollY/h*100:0)+'%';
-}
-);
-const navLinks=[...document.querySelectorAll('#sideNav a')];
-const sections=[...document.querySelectorAll('main section[id]')];
-const observer=new IntersectionObserver(entries=> {
-   entries.forEach(e=> {
-      if(e.isIntersecting) {
-         navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id));
-      }
-   }
-   )
-}
-, {
-   rootMargin:'-25% 0px -65% 0px'
-}
-);
-sections.forEach(s=>observer.observe(s));
-// Search
-const search=document.getElementById('searchInput'), empty=document.getElementById('searchEmpty');
-function norm(s) {
-   return (s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-}
-search?.addEventListener('input',()=> {
-   const q=norm(search.value.trim());
-   let count=0;
-   document.querySelectorAll('.searchable').forEach(el=> {
-    const text=norm((el.dataset.title||'')+' '+el.innerText);
-    const show=!q||text.includes(q);
-    el.classList.toggle('hidden-search',!show);
-    if(show)count++;
+
+@media(max-width:760px){
+  .header-inner{
+    height:70px
   }
-  );
-  empty.style.display=(q&&count===0)?'block':'none';
+
+  .brand-logo{
+    height:37px!important;
+    max-width:106px
+  }
+
+  .mobile-nav-wrap{
+    top:70px
+  }
+
+  .mobile-nav-inner{
+    padding:9px 14px
+  }
+
+  .top-actions .primary{
+    padding:10px 12px;
+    font-size:12px
+  }
+
+  .hero{
+    min-height:auto;
+    padding-bottom:38px
+  }
+
+  .hero h1{
+    font-size:46px
+  }
+
+  .hero-kicker{
+    font-size:10px;
+    line-height:1.3
+  }
+
+  .footer-logo{
+    width:130px
+  }
+
+  .back-top{
+    right:14px;
+    bottom:14px;
+    width:42px;
+    height:42px
+  }
 }
-);
-// Copy blocks
-for(const b of document.querySelectorAll('[data-copy]')) {
-   b.addEventListener('click',async()=> {
-       const id=b.dataset.copy;
-       const el=document.getElementById(id);
-       const clone=el.cloneNode(true);
-       clone.querySelectorAll('button').forEach(x=>x.remove());
-       try {
-         await navigator.clipboard.writeText(clone.innerText.trim());
-         b.textContent='Copiado ✓';
-         setTimeout(()=>b.textContent='Copiar',1800);
-       }
-       catch(e) {
-         b.textContent='Selecione o texto';
-       }
-   }
-   )
+
+@media print{
+  .mobile-nav-wrap,.back-top,.manager-badge{
+    display:none!important
+  }
 }
-// Checklist persistence
-const checks=[...document.querySelectorAll('[data-check]')];
-checks.forEach(c=> {
-   c.checked=localStorage.getItem('gex-recrutei-check-'+c.dataset.check)==='1';
-   c.addEventListener('change',()=>localStorage.setItem('gex-recrutei-check-'+c.dataset.check,c.checked?'1':'0'));
+
+/* Ajustes finais — 08/10/2026 */
+
+.hero > .hero-kicker,
+.hero > h1,
+.hero > p,
+.hero > .hero-actions,
+.hero > .tagline,
+.hero > .hero-mini{
+  position:relative;
+  z-index:2
 }
-);
-document.getElementById('resetChecklist').addEventListener('click',()=> {
-   checks.forEach(c=> {
-       c.checked=false;
-       localStorage.removeItem('gex-recrutei-check-'+c.dataset.check);
-   }
-   )
+
+.hero-mini{
+  position:relative!important;
+  right:auto!important;
+  bottom:auto!important;
+  width:min(100%,560px)!important;
+  margin-top:26px;
+  box-sizing:border-box;
 }
-);
-// Navegação móvel
-const mobileNav=document.getElementById('mobileNav');
-mobileNav?.addEventListener('change',()=> {
-   const el=document.querySelector(mobileNav.value);
-   if(el)el.scrollIntoView( {
-       behavior:'smooth',block:'start'
-   }
-   );
+
+@media(max-width:760px){
+  .hero-mini{
+    width:100%!important;
+    margin-top:24px;
+    padding:16px!important
+  }
+
+  .hero-mini strong{
+    font-size:18px
+  }
 }
-);
-// Sincroniza seletor móvel com a seção visível
-const mobileObserver=new IntersectionObserver(entries=> {
-   entries.forEach(e=> {
-       if(e.isIntersecting&&mobileNav) {
-         mobileNav.value='#'+e.target.id;
-       }
-   }
-   )
-}
-, {
-   rootMargin:'-30% 0px -60% 0px'
-}
-);
-sections.forEach(s=>mobileObserver.observe(s));
-// Voltar ao topo
-const backTop=document.getElementById('backTop');
-window.addEventListener('scroll',()=>backTop?.classList.toggle('show',scrollY>700));
-backTop?.addEventListener('click',()=>window.scrollTo( {
-   top:0,behavior:'smooth'
-}
-));
-   </script>
-   <button aria-label="Voltar ao topo" class="back-top" id="backTop" type="button">
-     ↑
-   </button>
-   <script id="gex-logo-data">
-     const GEX_LOGO_DATA = [
-   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAjIAAADkCAYAAACCNM5CAAC+S0lEQVR4nOy9d7wlVZW3/6y9d9',
-   'UJN3RumtDknCQnQURRxDiOccyKSBQQ04wz85t33pnXmVFBCZIU85izKCIISGyyZGhy6qbzTSdV1d7r90fVuX0burEbbnffbu',
-   'rhU9zT595zTu1ddWqvWuG7xE3dgZKSkpKSkpKSDRGzvnegpKSkpKSkpOTFUhoyJSUlJSUlJRsspSFTUlJSUlJSssFSGjIlJS',
-   'UlJSUlGyylIVNSUlJSUlKywVIaMiUlJSUlJSUbLKUhU1JSUlJSUrLBUhoyJSUlJSUlJRsspSFTUlJSUlJSssFSGjIlJSUlJS',
-   'UlGyylIVNSUlJSUlKyweLW9w6UrB7X3D9XxUGWwX0PDDH/2cWIddx9z4O0Op6AQdWhYgEDCvscuAuN4Wfp7YvZY+8d6dVlvG',
-   'rrKUybtqOs7/GUlJSUlJSMB6Uhs5b43Omf0C+dedG4GAx33XKlfvxzX+WexxdQrdfIskAlrjJl2nTarQ7OVQgIIIDNX6TCNX',
-   'P+wiYz+knag7RDYGrc4OzPf3Q8dqmkpKSkpGRCUBoya4nxMmIA6n19TJm5Gb2yORrVcShpmrAoZES9BkIGKEY9IgFRBYRZm+',
-'2BDR6tTiGoUqsOs90Ou4zXbpWUlJSUlKx3yhyZtcjDT/5Vx+N9BkeajDTaVEKMNgKmY6jbXiJqiKnR1pi2RoxIhUGpscxWGT',
-'AVWjbFVzJ6plaJei3t0MSPk+n64D3jM7aSkpKSkpKXQmnIrCV+/PtL9Hu//BO/u/THL3nBnzxlKn2TJjOpr0p/PcZZxWiGES',
-'Vptam5KlVXp+J6qEY91FwfVddLO0lodpoMjAwz3GrQThJaHf+Sx/apU0/U7/7kEi7+8c/1+ltvLw2akpKSkpL1RhlaGgeOP/',
-'kkff3fv4c7nxjg1vueYWTZMv75gj/gZIT+vpkv+f2bScbASIMFI4uRShVVRb0QRxVqBkLSxKglChajBtSgAlE0BbSDaptq5O',
-'jvsWiwL3l/Eq9ced39PHvDUqZNvptXf+yLute2M3j6nquZVHdc/K3vlsnEJSUlJSXrhNKQeQlcesed+oM/3sivbpnLzy+4At',
-'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',
-'VkLqWn4ug0h6lUqlTjmM7gIJXGEIdNqvK2Q7bjwM03oJJqjTEhAtI1elm3oaJRUDVYzRWNNwS+es4Fwjl5a4GP/Ne3dc6984',
-'htD2nmyGyF4IRgiuReH3KHlY1W670FIZYq3mcQGa6550mWDjfYde99uHHOrWtxVCUlJSUl482E8cjs9w8f5YmWI+mbQhrFJF',
-'lemeSspasFs/x22eQtBxRcyLtUh6L8WvC4kOFMoJ0lSOzwnREmtRrs0lPh8K1nblhGDOBCwKlH1iBHBiBIGNXQyR1Y2k2Z2a',
-'DwT9zATjMjdGgxaTslywzOxlgDIWsTPIisibdKyDopvfU+XKWP6vQteWBBg52OeMtaG0NJSUlJydphvRsyBx68n777lOP0D4',
-'/Oo9U3i0FTYygNWBvTV6lig5JlabEoF+mrCoUwDNZHBAyJ83iTYEhwIdBst7BxTDYyzLTmIEdtM5nODb/hqP333PCWckkQaQ',
-'OrLxKnQGbIG19KkSYrOqGTfVfF9y/4hsxsPcwH33gA/VGKhgT1HdQnqCpqLKyRIQM+8xgbMTTcJpE62juLH112Mz/646V62m',
-'knliGmkpKSkg2E9W7I7H7g/uhrj2JJfTIjPkar9Tz3AYvJAqHTphpbILBCgkfhbVAivAjepvmCTyCIIVNLDagvXcxRW03nH4',
-'84WL57zrkb4DIO3ijBJGvoTdFCVye3+UQCG6Q7puAb518knzvmrfLeN+zKJr0JVVoYn2JthIojW8OQ2dRp0xkYGKRer9Fqts',
-'i8ZdD3ceb3Lmf/o9+7dgZRUlJSUjLurHdDZu/3f5jHhzJSW6WdtEiShMga0LxCqWoNmqUYFHR5mERFCQKmZulkKZERotiSAF',
-'KpUYmq1BtNDt98Jvf89Hvre5gviXYWyKxd47oli2AQ0k6CTzOcOGQDyZFZFU/99XL22rYOjfkYzVCxGGdJs3S0aWa3keQLMd',
-'QYolKvkGUdemJLhOK1woJ2nfN/dAUnfvLk0itTUlJSsgGwXg2ZX913p96woIXp2ZSOF2zFYFSxQTEayDNfAi5okaSqKIoXTx',
-'CPimdgaJi+eg1NA8ONDsE4fLOBXfAMh8/oYcElP+CbZ2+YnphDDtpXAeJKDxrW9FAJmkDsDX1RBRcU8R7n4NOnbrihk3POPF',
-'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',
-'vRUG3Jqsm1rHTUkKlWq3zmn/8fZ13w3XGZuLvmztVvPvgs14yk2Gkz0Cxg1YwaMX/LkNFOikkSkjSjnXokCTDSJm4Oky54mk',
-'8ctTdf+PBb1+lB/s73fqI/uOQm7lsU04k2IWSemIzIesQKEjmIcs96keWMkdyQUVsUgJgYbyJUlHpk6DSG6HEpM/xCPvCWwz',
-'nx3etmTONWtfSH6+9mSRaTJBlTJk/LPW++U1TrrB6ikLXbzKDNoVtPWadGzCEH76fvO+E4/cmtj7HQzcRLjdBOiAJ4E0htvo',
-'OmSKhVzTVhcmebgvoic2LsePNkX5+02HHbzdl8ahW/9DH226qPT7xtP3asLuPU975XJpIRA3DMe46SrWqLOeb1O7HnFlX6zR',
-'BDA/PBenp6e3LxOJ+t0XuKCiY4ohhSRsB5TLWfjp3GlTc/xtd/8Fs95KD912k104Nz/sRWm/TgNCGOIoJaPLZoEqmI2kKsMH',
-'en5vHhothQ8mNrMo/H8cjCIa7566MceOC6HcN4c8a5F7/gojn2wl1uy7csy5g+ffq4GTGQL85JkpTzvhpb1xvjvSeOY7z3hD',
-'B+4nN77rijbP7Ug+xQ9ZiRhRhNWIMMGZCAdiU6FFzIw9VtU6XVM5PfXP8gP/79tevs2vEf/3Om/uzq+7j/mRE06qESOYz6PP',
-'+zSNmlqEAaXfPoCqwKWvSc8iFQq8VYn1AJLSZFKZvEGad+8M08eMNl62o442PIHH/yiXrbo89ip8wiyxLiqJdK3EdImyt4XF',
-'ZrZ1oddp7aw9/vtOs6Xdx3PWB/Wq84jJsWJkTVGSxYsJjpszYhNYINBhdyLYDRBljGkBUJoU6Xt3nvCuUaBauKUU+sCcnQfJ',
-'Y+cS/veM3e/Pen3s+/HPse+cb5677FwurytbPPlf/5jy/IFd/5d/nHj7yR3WfGpIseJ7SWYZ2ShDU0ZLqify5vMDaSjJB6EN',
-'vDQCviJ3+8ju33eMVaGs3KueDcC2XP7WfQGlgAPgNTxRtDMHmZvAuCCysq/Oa6MnkKu8FjvEFsTBL1cPejA+yyjscw3nz65G',
-'MQkZVuJS/M0ND4NhKtVqvEcYzqBm0br3VUFeccaZqOeoG7xs148vkTj5UjZ09jG5poe2jlquer2kcMqc3Ll13IpTvyrENLKh',
-'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',
-'z7nm2yV23VjAzA7374P4T1GfR2T2bVUJuoFsOw8d4m6fnhWfSRgLZIz7SzFGMtURSwdl3Kyg7LrasW60m7jU0K7qWHTObp5c',
-'tYPjiAqXQTEKDq8t4JDCrDSTaPGV6j5p3pTgwWB+rAZ1gVRMDYAI/DGotgUeep1eqYIGBgsEEQR2BriK3QDjzLG20eW7mGeX',
-'d/k1oloLurTnetSjWy9NSr7D1tdz59zY+1q14jazew1hJYSxwajMtQn9JKE3o7Iw47YBqHHHnCDvELNBbcuWix/seXf0qlaw',
-'KJjUgTCG2ANSEpue7RRseRTf+/Meb3GIzkz+2qhjx403XbeRUlJSXbitM/+CEuv/0J1sUdOLXgm4RiCAJL0kpwWZrf5gj5e/',
-'rwxJLm4plAoTWWD7Hksv8KrQ3sN7WDI2ZM47CDD98h34MfmP9bjthvD+57okGIw5kQE4VYbeVVCMAVN/H5xG5eiXBmWKo4QD',
-'AEEtNRDWgaIYwiTHcP9zy+knuXrGPhfffozMOP3Krr3+qBTE/FcvL+E/jj8lWsM3sU2ZdCSE4Vox5VQU0uAz/sLhz4XIwsE0',
-'NoDWmrSXdtAsvV8vmb/siNj9+vL9v3sO1+8c84+jD5yZ1362/vfYz5S/uxUTeJMyTOgResjUj9EJlPCYjwmYDPJattMcImXg',
-'rHZMB4Mk1yMaFCV0BVUHWQOOLI4lw6ok/TShQICeq7EXRMwaGs9Z41/R71HtU2yaLFQC6DPTwgpsXHtviFygjo1HV893MXbO',
-'9TuMNw3vnn6A9/N487lidoUEWzQaoS4j00vIfAYLwvgmvBDY9hq6A+oFKp0BoawhvBV4R0YA0z9uhhz7hnLJe1VfnPS6/mtJ',
-'OP2WzScKx5zpHWrXSMW+P7D7sv/935Z+l/f37rqJInSbKZoeVo2NbnbEfiz60pf/8bndfSeRfP0dPefw4/Wvw4K+qWNArztl',
-'YxeGdwSYAld4V2rig2qyDegU/x6lA1iFosgkvbeDwadhORMkVWcuIB+3PiscfukEEMwDVXf1F+++vr9Qe/vIsbH1xO0j2V/t',
-'QjQEyCt0JmKnmTrzO57QIetUpGiEUwTki9A/EY18KJ4iWiP96Dy77/B06fdQBzzv+wzv381stib/VA5tLLrpbbHrpI777mB1',
-'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'
-].join('');
-document.querySelectorAll('[data-gex-logo]').forEach(img => {
-  img.src = GEX_LOGO_DATA;
-});
-  </script>
- </body>
-</html>
+
+</style>
+</head>
+
+<body>
+
+<div class="progress-top" id="progressTop"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+
+    <a class="brand" href="#inicio">
